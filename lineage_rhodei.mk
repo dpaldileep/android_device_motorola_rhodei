@@ -20,6 +20,38 @@ PRODUCT_MANUFACTURER := motorola
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := moto g62 5G
 
+# Lunch banner maintainer variable
+RISING_MAINTAINER="Dileep"
+
+# Chipset/Maintainer properties (ro.rising.chipset/ro.rising.maintainer) 
+# Set RISING_MAINTAINER for version control 
+# (Optional if builder is setting properties via init_<device>.cpp)
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    RisingChipset="snapdragon 695" \
+    RisingMaintainer="Dileep"
+
+RISING_MAINTAINER := Dileep
+# Disable/enable blur support, false by default
+TARGET_ENABLE_BLUR := false
+
+# Whether to ship aperture camera, false by default
+PRODUCT_NO_CAMERA := false
+
+# GMS build flags, true by default
+# Ship with GMS packages, replaces default AOSP packages with Google manufactured packages.
+WITH_GMS := true
+
+# CORE build flags
+WITH_GMS := true
+TARGET_USES_PICO_GAPPS := true
+
+# VANILLA only build flags
+WITH_GMS := false
+
+# VANILLA build with MICROG
+WITH_GMS := false
+WITH_MICROG := true
+
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
